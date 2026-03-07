@@ -105,6 +105,39 @@ function heart(){
 
     setTimeout(()=>{h.remove()},6000);
 }
+.sakura{
+    position:absolute;
+    top:-10px;
+    color:#ffb7c5;
+    font-size:20px;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-10px) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0.7;
+    }
+}
+    
+    function sakura(){
+    const s=document.createElement("div");
+    s.className="sakura";
+    s.innerHTML="🌸";
+    s.style.left=Math.random()*100+"vw";
+    s.style.animationDuration=(5+Math.random()*5)+"s";
+    s.style.fontSize=(15+Math.random()*20)+"px";
+
+    document.body.appendChild(s);
+
+    setTimeout(()=>{s.remove()},10000);
+}
+
+setInterval(sakura,300);
 
 setInterval(heart,400);
 
